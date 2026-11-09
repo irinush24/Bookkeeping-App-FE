@@ -7,6 +7,7 @@ import {
 	UnauthenticatedTemplate,
 } from "./components/common/Templates";
 import Home from "./components/home";
+import Navbar from "./components/navbar";
 
 export default function App() {
 	const { login } = useAuth();
@@ -33,7 +34,15 @@ export default function App() {
 	return (
 		<>
 			<UnauthenticatedTemplate>
-				<Box sx ={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: "center",
+						height: "100vh",
+					}}
+				>
 					<Typography variant="h4" gutterBottom>
 						Welcome to the Bookshop App!
 					</Typography>
@@ -48,6 +57,7 @@ export default function App() {
 			</UnauthenticatedTemplate>
 
 			<AuthenticatedTemplate>
+				<Navbar />
 				<Home />
 			</AuthenticatedTemplate>
 		</>
